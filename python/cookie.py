@@ -6,6 +6,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 path = '/login'
 
+def cookie_update(CookieJar):
+    with open("all_cookies.txt", 'rw') as f:
+        if json.loads(f.read()) != CookieJar:
+            print('server serve new cookies!')
+            f.write(json.dumps(CookieJar))
+        else:
+            print("CookieJar isn't changed")
+    return None
+
 def first_load(url):
     options = webdriver.ChromeOptions();
     driver = webdriver.Chrome(ChromeDriverManager().install())

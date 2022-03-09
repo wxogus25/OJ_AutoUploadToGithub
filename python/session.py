@@ -18,7 +18,10 @@ def connect(url):
     session.cookies.update(all_cookies(url))
 
     # verify=False ssl 인증서 검증 패스
-    soup = bs(session.get(url, verify=False).text, 'html.parser')
+    receive = session.get(url, verify=False)
+    # print(receive.cookies)
+    # print(receive.headers)
+    soup = bs(receive.text, 'html.parser')
     if soup.find('a', {'class': 'username'}) is None:
         print('sad')
         session.close()
@@ -26,6 +29,7 @@ def connect(url):
         return False # connect 재실행
     else:
         print('lol')
+        # cookie_update(session.cookies.get_dict())
         return session
 
 
