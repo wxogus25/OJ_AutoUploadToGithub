@@ -3,23 +3,13 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-
-boj_url = 'https://www.acmicpc.net'
-login_path = '/login'
-user_path = '/user/'
+from variables import *
 
 def accept_path(username):
     return f'/status?user_id={username}&result_id=4'
 
 # To Do 새로운 쿠키 받으면 쿠키 세션과 파일의 쿠키 업데이트하기
 # def cookie_update(CookieJar):
-#     with open("boj_cookie.txt", 'rw') as f:
-#         if json.loads(f.read()) != CookieJar:
-#             print('server serve new cookies!')
-#             f.write(json.dumps(CookieJar))
-#         else:
-#             print("CookieJar isn't changed")
-#     return None
 
 
 def first_load(url):

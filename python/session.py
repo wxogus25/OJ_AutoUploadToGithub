@@ -13,7 +13,7 @@ def make_session(url):
         break
     return running
 
-# url과 세션 연결, 실패하면 False, 성공하면 연결된 세션과 유저네임 반환
+# url과 세션 연결, 실패하면 False, 성공하면 연결된 세션 반환
 def connect(url):
     session = requests.Session()
     session.headers.update(headers)
@@ -33,11 +33,11 @@ def connect(url):
     else:
         print('lol')
         # cookie_update(session.cookies.get_dict())
-        return session, username.text
+        return session
 
 
 if __name__ == '__main__':
     # ssl 패스 경고메세지 무시
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-    session, username = make_session(boj_url)
-    print(username)
+    session= make_session(boj_url)
+    # print(username)
