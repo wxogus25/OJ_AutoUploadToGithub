@@ -1,8 +1,10 @@
 boj_url = 'https://www.acmicpc.net'
-gin_path = '/login'
+login_path = '/login'
 user_path = '/user/'
+git_url = 'https://api.github.com'
 
 boj_tier = {
+  -1: 'Extra',
   0: 'Unrated',
   1: 'Bronze V',
   2: 'Bronze IV',
