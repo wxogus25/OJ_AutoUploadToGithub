@@ -5,6 +5,9 @@ import hashlib
 import base64
 
 # https://storycompiler.tistory.com/7 : 깃 설명
+# https://www.thepythoncode.com/article/using-github-api-in-python : 깃 조작
+# https://gist.github.com/MartinHeinz/739b24f0b94dfb4a0dbea53efa61e04e#file-update_file_in_repo-py : 예시 2
+
 header = {'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token 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'}
 session = requests.Session()
 session.headers.update(header)
